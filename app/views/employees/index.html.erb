@@ -1,0 +1,24 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Employees</h1>
+
+<% if params[:status] == 'Verified' %>
+  <h2>Verified Employees</h2>
+<% elsif params[:status] == 'Pending Verification' %>
+  <h2>Pending Verification Employees</h2>
+<% else %>
+  <h2>All Employees</h2>
+<% end %>
+
+<div id="employees">
+  <% @employees.each do |employee| %>
+    <div class="employee">
+      <%= render employee %>
+      <p>
+        <%= link_to 'Show this employee', employee_path(employee) %>
+      </p>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to 'New Employee', new_employee_path %>
