@@ -1,13 +1,16 @@
 class Employee < ApplicationRecord
-  validates :full_name, :contact_info, :position, :department, presence: true
+  # before_create :generate_employee_id
+  validates :full_name, :email, :phone_number, :position, :department, :employee_id, :emergency_contact, presence: true
   validates :status, inclusion: { in: ['Pending Verification', 'Verified'] }
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, message: "is not a valid email" }
+  validates :employee_id, uniqueness: true
 
-  before_create :set_default_status
+  
 
-  private
+  # private
 
-  def set_default_status
-    self.status ||= 'Pending Verification'
+  def generate_employee_id
+    self.employee_id ||= SecureRandom.hex(4).upcase
   end
 end
 

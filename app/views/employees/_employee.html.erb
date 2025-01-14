@@ -1,27 +1,50 @@
-<div id="<%= dom_id employee %>">
-  <p>
-    <strong>Full name:</strong>
-    <%= employee.full_name %>
-  </p>
+<div id="<%= dom_id(employee) %>" class="card" >
+  <div class="card-body">
+    <h5 class="card-title">Employee Details</h5>
 
-  <p>
-    <strong>Contact info:</strong>
-    <%= employee.contact_info %>
-  </p>
+    <p class="mb-2">
+      <strong>Full name:</strong>
+      <%= employee.full_name %>
+    </p>
 
-  <p>
-    <strong>Position:</strong>
-    <%= employee.position %>
-  </p>
+    <p class="mb-2">
+      <strong>Email:</strong>
+      <%= employee.email %>
+    </p>
 
-  <p>
-    <strong>Department:</strong>
-    <%= employee.department %>
-  </p>
+    <p class="mb-2">
+      <strong>Phone number:</strong>
+      <%= employee.phone_number %>
+    </p>
 
-  <p>
-    <strong>Status:</strong>
-    <%= employee.status %>
-  </p>
+    <p class="mb-2">
+      <strong>Position:</strong>
+      <%= employee.position %>
+    </p>
 
+    <p class="mb-2">
+      <strong>Department:</strong>
+      <%= employee.department %>
+    </p>
+
+    <p class="mb-2">
+      <strong>Status:</strong>
+      <%= employee.status %>
+    </p>
+
+    <p class="mb-2">
+      <strong>Employee ID:</strong>
+      <%= employee.employee_id %>
+    </p>
+
+    <p class="mb-2">
+      <strong>Emergency contact:</strong>
+      <%= employee.emergency_contact %>
+    </p>
+
+    <p class="mb-2">
+      <strong>Date of joining:</strong>
+      <%= employee.date_of_joining %>
+    </p>
+  </div>
 </div>

@@ -28,6 +28,9 @@
                 <%= link_to 'Onboard a New Employee', new_employee_path %>
             </li>
             <li class="nav-item">
+                <%= link_to 'Profile', edit_admin_registration_path %>
+            </li>
+            <li class="nav-item">
                 <%= button_to 'Log Out', destroy_admin_session_path, method: :delete, class: 'btn btn-link' %>
             </li>
         <%else%>

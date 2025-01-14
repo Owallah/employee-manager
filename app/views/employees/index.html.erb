@@ -1,6 +1,9 @@
 <p style="color: green"><%= notice %></p>
+<div class="panel panel-default">
+  <div class="panel-heading"><h1>Employees</h1></div>
+  <div class="panel-body">
 
-<h1>Employees</h1>
+
 
 <% if params[:status] == 'Verified' %>
   <h2>Verified Employees</h2>
@@ -21,4 +24,6 @@
   <% end %>
 </div>
 
-<%= link_to 'New Employee', new_employee_path %>
+</div>
+  <div class="panel-footer"><%= link_to 'New Employee', new_employee_path %></div>
+</div>

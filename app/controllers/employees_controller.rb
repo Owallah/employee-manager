@@ -32,6 +32,12 @@ class EmployeesController < ApplicationController
   def create
     @employee = Employee.new(employee_params)
 
+    @employee.generate_employee_id
+
+    if @employee.invalid?
+      puts "Validation errors: #{@employee.errors.full_messages}"  # Debugging line
+    end
+
     respond_to do |format|
       if @employee.save
         format.html { redirect_to @employee, notice: "Employee was successfully created." }
@@ -74,7 +80,7 @@ class EmployeesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def employee_params
-      params.require(:employee).permit(:full_name, :contact_info, :position, :department, :status)
+      params.require(:employee).permit(:full_name, :email, :position, :department, :status, :phone_number, :employee_id, :emergency_contact, :date_of_joining)
     end
 
     def ensure_pending_status
